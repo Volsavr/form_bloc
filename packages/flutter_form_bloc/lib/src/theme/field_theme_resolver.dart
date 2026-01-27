@@ -13,10 +13,9 @@ class FieldThemeResolver {
   const FieldThemeResolver(this.theme, this.formTheme, [this.fieldTheme]);
 
   InputDecorationTheme get decorationTheme {
-    final InputDecorationTheme result = fieldTheme?.decorationTheme ??
+    return (fieldTheme?.decorationTheme ??
         formTheme.decorationTheme ??
-        theme.inputDecorationTheme;
-    return result;
+        theme.inputDecorationTheme) as InputDecorationTheme;
   }
 
   TextStyle get textStyle {
